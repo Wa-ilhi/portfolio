@@ -557,6 +557,7 @@ section {
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 400px;
+  box-shadow: 0px 2px 15px rgba(255, 255, 255, 0.985);
 }
 
 /*--------------------------------------------------------------
@@ -1171,19 +1172,28 @@ section {
 # Team
 --------------------------------------------------------------*/
 .team {
-  background: #fff;
+  background: #040404;
   padding: 60px 0;
 }
 
 .team .member {
   margin-bottom: 20px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the member content */
 }
 
 .team .member .member-img {
   position: relative;
   overflow: hidden;
   border-radius: 5px;
+  display: flex;
+  justify-content: center; /* Center the image */
+}
+
+.team .member .member-img img {
+  display: block;
 }
 
 .team .member .social {
@@ -1226,6 +1236,7 @@ section {
   font-weight: 700;
   margin: 15px 0 5px 0;
   font-size: 18px;
+  text-align: center; /* Center the text */
 }
 
 .team .member .member-info span {
@@ -1235,6 +1246,7 @@ section {
   font-weight: 400;
   margin-bottom: 15px;
   color: #7cc576;
+  text-align: center; /* Center the text */
 }
 
 .team .member .member-info p {
@@ -1242,6 +1254,7 @@ section {
   font-size: 14px;
   line-height: 26px;
   color: #888888;
+  text-align: center; /* Center the text */
 }
 
 .team .member:hover .social {
@@ -1249,6 +1262,7 @@ section {
   opacity: 1;
   transition: bottom ease-in-out 0.4s;
 }
+
 
 /*--------------------------------------------------------------
 # Pricing
@@ -1428,6 +1442,10 @@ section {
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
+.contact {
+  background: #040404;
+}
+
 .contact .info {
   width: 100%;
   height: 100%;
@@ -1479,7 +1497,7 @@ section {
 
 .contact .php-email-form {
   width: 100%;
-  background: #fff;
+  background: #040404;
   padding: 20px;
   border-radius: 5px;
 }
