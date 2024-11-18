@@ -310,7 +310,7 @@ h6 {
 }
 
 .mobile-nav-toggle.bi-x {
-  color: #fff;
+  color: #616060;
 }
 
 @media (max-width: 991px) {
@@ -330,7 +330,7 @@ h6 {
   right: 0;
   left: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgb(255, 255, 255);
   transition: 0.3s;
   z-index: 999;
 }
@@ -342,24 +342,60 @@ h6 {
 }
 
 .navbar-mobile ul {
-  display: block;
+  display: flex; /* Use flexbox for alignment */
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center; /* Center items vertically */
+  align-items: center; /* Center items horizontally */
+
   position: absolute;
   top: 55px;
   right: 15px;
   bottom: 15px;
   left: 15px;
   padding: 10px 0;
-  background-color: #fff;
+  background-color: #060606;
   overflow-y: auto;
   transition: 0.3s;
+ 
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); /* Start slightly below */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* End in the original position */
+  }
 }
 
 .navbar-mobile a,
 .navbar-mobile a:focus {
   padding: 10px 20px;
   font-size: 15px;
-  color: #151515;
+  color: #ffffff;
+  text-align: center;
+  opacity: 0; /* Initially hidden */
+  animation: fadeInUp 0.5s ease forwards; /* Fade-in-up effect */
 }
+
+.navbar-mobile ul a:nth-child(1) {
+  animation-delay: 0.1s; /* Add delay for the first link */
+}
+
+.navbar-mobile ul a:nth-child(2) {
+  animation-delay: 0.2s; /* Add delay for the second link */
+}
+
+.navbar-mobile ul a:nth-child(3) {
+  animation-delay: 0.3s; /* Add delay for the third link */
+}
+
+.navbar-mobile ul a:nth-child(4) {
+  animation-delay: 0.4s; /* Add delay for the fourth link */
+}
+
 
 .navbar-mobile a:hover,
 .navbar-mobile .active,
@@ -687,6 +723,11 @@ section {
   margin: 5px 0 10px 60px;
 }
 
+.services .icon-box {
+  text-align: left; /* Center-align content in each box */
+  margin-bottom: 30px; /* Add spacing between boxes */
+}
+
 .services .icon-box i {
   font-size: 48px;
   float: left;
@@ -723,17 +764,26 @@ section {
   border: 0;
   padding: 20px;
   color: #151515;
-  transition: 0.3s;
+  background-color: #f9f9f9; /* Initial background */
+  transition: 0.3s ease; /* Smooth transition for hover effects */
+  border-radius: 8px; /* Add some rounded corners for visual appeal */
+}
+
+.featured .nav-link:hover {
+  background-color: #7cc576; /* Change background on hover */
+  color: rgb(6, 6, 6); /* Change text color on hover */
+  transform: scale(1.05); /* Slightly enlarge the element */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
 }
 
 .featured .nav-link h4 {
   font-size: 18px;
   font-weight: 600;
-  transition: 0.3s;
+  transition: 0.3s ease; /* Smooth text color change */
 }
 
 .featured .nav-link:hover h4 {
-  color: #7cc576;
+  color: white; /* Ensure h4 changes to white to match hover effect */
 }
 
 .featured .nav-link p {
@@ -741,13 +791,12 @@ section {
   margin-bottom: 0;
 }
 
-.featured .nav-link.active {
-  box-shadow: 0px 0 25px rgba(0, 0, 0, 0.08);
+.featured .nav-link:hover p {
+  color: #f9f9f9; /* Lightened text for hover effect */
 }
 
-.featured .nav-link.active h4 {
-  color: #0aca04;
-}
+
+
 
 .featured .tab-pane.active {
   animation: slide-down 0.5s ease-out;
