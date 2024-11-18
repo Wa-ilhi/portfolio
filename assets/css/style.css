@@ -15,6 +15,64 @@ body {
   color: #fff;
 }
 
+/* Preloader container */
+/* Preloader container */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000; /* Background color for preloader */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Ensure it stays above everything */
+  transition: opacity 0.2s ease-out; /* Fade-out effect */
+  pointer-events: none;
+}
+
+/* Fade-out class */
+#preloader.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Logo styling */
+.preloader-logo {
+  width: 150px; /* Adjust size as needed */
+  height: auto;
+  animation: pulse 2s infinite; /* Sync with the delay */
+}
+
+/* Pulse animation for logo */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Hide content initially */
+.content {
+  display: none;
+}
+
+
+/* Hide content until loaded */
+.content {
+  display: none;
+}
+
+
 a {
   text-decoration: none;
   color: #7cc576;
@@ -356,6 +414,7 @@ h6 {
   height: 100vh;
   background: url("../img/hero-bg.png");
   position: relative;
+  z-index: 1;
 }
 
 #hero .hero-container {
@@ -370,6 +429,7 @@ h6 {
   flex-direction: column;
   text-align: center;
   padding: 0 15px;
+  animation: fadeIn 1.5s ease-in-out forwards;
 }
 
 #hero .hero-logo {
@@ -428,6 +488,15 @@ h6 {
   #hero h2 {
     line-height: 22px;
   }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 }
 
 /*--------------------------------------------------------------
@@ -460,6 +529,79 @@ section {
   margin-bottom: 0;
   color: #aeaeae;
 }
+
+#tech-stack {
+  width: 100%; /* Full width of the viewport */
+  overflow: hidden; /* Hide any images that are outside the container */ /* Optional background color */
+  padding: 20px 0; /* Adds padding at the top and bottom of the container */
+
+}
+
+.tech-stack-container {
+  display: flex; /* Align images horizontally */
+  justify-content: space-evenly; /* Space out the logos evenly */
+  animation: scrollImages 15s linear infinite; /* Animation for scrolling */
+  gap: 20px;
+  width: calc(100% * 2);
+}
+
+.tech-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  padding: 0 15px; /* Spacing between logos */
+  transition: transform 0.3s ease; /* Optional: Adds smooth hover effect */
+}
+
+#tech-stack .tech-logo img {
+  width: 100px; /* Set the desired width */
+  height: 100px; /* Set the desired height */
+  object-fit: contain; /* Ensures the image scales while maintaining aspect ratio */
+  display: block; /* Removes inline image gaps */
+  margin: 0 10px;
+}
+
+#tech-stack .tech-logo {
+  width: 100px; /* Ensures the logo container matches the image size */
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center-aligns the logos */
+  overflow: hidden; /* Hides overflow in case of any extra space in the image */
+}
+
+.tech-stack-container:hover {
+  animation-play-state: running; /* Pause the animation when hovered */
+}
+
+/* Optional: Add hover effect for individual logos */
+.tech-logo img:hover {
+  transform: scale(1.2); /* Slightly enlarge the logo on hover */
+  transition: transform 0.3s ease; /* Smooth transition effect */
+}
+
+@keyframes scrollImages {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Move images to the left */
+  }
+}
+
+@media (max-width: 768px) {
+  #tech-stack {
+    padding: 15px 0; /* Adjust padding for smaller screens */
+  }
+
+  .tech-logo img {
+    max-width: 50px; /* Adjust logo size for mobile */
+    max-height: 50px;
+  }
+}
+
+
 
 /*--------------------------------------------------------------
 # About Us
@@ -1445,24 +1587,25 @@ section {
 # Contact
 --------------------------------------------------------------*/
 .contact {
-  background: #040404;
+  background: #12121258;
 }
 
 .contact .info {
-  width: 100%;
-  height: 100%;
-  background: #fff;
-  padding: 20px;
-  border-radius: 5px;
+    flex: 1; /* Ensures all items take equal width */
+    margin: 0 10px;
+    text-align: center; /* Adds horizontal spacing between items */
+    gap: 20px;
+    display: flex;
+
+
 }
 
 .contact .info i {
   font-size: 20px;
   color: #7cc576;
-  float: left;
   width: 44px;
   height: 44px;
-  background: #eaf6e9;
+  background: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1482,7 +1625,7 @@ section {
   padding: 0 0 0 60px;
   margin-bottom: 0;
   font-size: 14px;
-  color: #484848;
+  color: #ffffff;
 }
 
 .contact .info .email,
