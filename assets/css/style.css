@@ -75,7 +75,7 @@ body {
 
 a {
   text-decoration: none;
-  color: #7cc576;
+  color: #0aca04;
 }
 
 a:hover {
@@ -705,13 +705,15 @@ section {
 
 .skills .progress-bar-wrap {
   background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
 }
 
 .skills .progress-bar {
   width: 1px;
   height: 10px;
   transition: 0.9s;
-  background-color: #18d26e;
+  background-color: #0aca04;
+  border-radius: 5px;
 }
 
 /*--------------------------------------------------------------
@@ -731,7 +733,7 @@ section {
 .services .icon-box i {
   font-size: 48px;
   float: left;
-  color: #7cc576;
+  color: #0aca04;
 }
 
 .services .icon-box p {
@@ -770,7 +772,7 @@ section {
 }
 
 .featured .nav-link:hover {
-  background-color: #7cc576; /* Change background on hover */
+  background-color: #0aca04; /* Change background on hover */
   color: rgb(6, 6, 6); /* Change text color on hover */
   transform: scale(1.05); /* Slightly enlarge the element */
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
@@ -1076,62 +1078,52 @@ section {
   opacity: 0;
 }
 
-.portfolio .portfolio-wrap .portfolio-info {
-  opacity: 0;
-  position: absolute;
-  top: 0;
+.portfolio-info {
+  position: absolute; /* Position inside parent container */
+  bottom: 0;
   left: 0;
   right: 0;
-  bottom: 0;
-  text-align: center;
-  z-index: 3;
-  transition: all ease-in-out 0.3s;
+  height: 100%; /* Cover the entire image area */
+  background: linear-gradient(to top, rgba(0, 181, 3, 0.879), rgba(0, 0, 0, 0.417));
+  color: #ffffff;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end; /* Align text to the bottom */
+  opacity: 0; /* Start hidden */
+  transition: all 0.5s ease; /* Smooth transition effect */
+}
+.portfolio-wrap:hover .portfolio-info {
+  opacity: 1; /* Visible on hover */
 }
 
-.portfolio .portfolio-wrap .portfolio-info::before {
-  display: block;
-  content: "";
-  width: 48px;
-  height: 48px;
-  position: absolute;
-  top: 35px;
-  left: 35px;
-  border-top: 3px solid #fff;
-  border-left: 3px solid #fff;
-  transition: all 0.5s ease 0s;
-  z-index: 9994;
+.portfolio-info h4, 
+.portfolio-info p {
+  color: rgba(0, 0, 0, 0.316);
+  opacity: 0; /* Hidden initially */
+  transform: translateY(10px); /* Slide-in effect */
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  z-index: 1;
 }
 
-.portfolio .portfolio-wrap .portfolio-info::after {
-  display: block;
-  content: "";
-  width: 48px;
-  height: 48px;
-  position: absolute;
-  bottom: 35px;
-  right: 35px;
-  border-bottom: 3px solid #fff;
-  border-right: 3px solid #fff;
-  transition: all 0.5s ease 0s;
-  z-index: 9994;
-}
-
-.portfolio .portfolio-wrap .portfolio-info h4 {
-  font-size: 20px;
-  color: #fff;
-  font-weight: 600;
-}
-
-.portfolio .portfolio-wrap .portfolio-info p {
+ 
+.portfolio-wrap:hover .portfolio-info p {
   color: #ffffff;
-  font-size: 14px;
-  text-transform: uppercase;
-  padding: 0;
-  margin: 0;
+  opacity: 1; /* Fade in */
+  transform: translateY(0); /* Reset slide position */
+  z-index: 1;
+}
+
+.portfolio-wrap:hover .portfolio-info h4{
+  color: #fffafa;
+  opacity: 1; /* Fade in */
+  transform: translateY(0); /* Reset slide position */
+  z-index: 1;
+ 
+}
+
+.portfolio-links {
+  display: none; /* Hide the plus icon container */
 }
 
 .portfolio .portfolio-wrap .portfolio-links {
@@ -1139,39 +1131,9 @@ section {
   z-index: 4;
 }
 
-.portfolio .portfolio-wrap .portfolio-links a {
-  color: #fff;
-  margin: 0 2px;
-  font-size: 28px;
-  display: inline-block;
-  transition: 0.3s;
-}
 
-.portfolio .portfolio-wrap .portfolio-links a:hover {
-  color: #7cc576;
-}
 
-.portfolio .portfolio-wrap:hover::before {
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  opacity: 1;
-}
 
-.portfolio .portfolio-wrap:hover .portfolio-info {
-  opacity: 1;
-}
-
-.portfolio .portfolio-wrap:hover .portfolio-info::before {
-  top: 15px;
-  left: 15px;
-}
-
-.portfolio .portfolio-wrap:hover .portfolio-info::after {
-  bottom: 15px;
-  right: 15px;
-}
 
 /*--------------------------------------------------------------
 # Portfolio Details
