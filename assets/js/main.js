@@ -22,21 +22,7 @@
   }
 
  // script.js
-window.addEventListener("load", () => {
-  const preloader = document.getElementById("preloader");
-  
-  // Keep the preloader visible for 5 seconds
-  setTimeout(() => {
-    preloader.classList.add("hidden"); // Trigger fade-out effect
-    setTimeout(() => preloader.style.display = "none", 500); // Fully remove after fade-out
-    document.querySelector(".content").style.display = "block"; // Show the content
-  }, 3000); // 5000ms = 5 seconds
-});
 
-AOS.init({
-  duration: 1000, // Animation duration in ms
-  once: true,     // Run animation only once
-});
 
   /**
    * Easy event listener function
