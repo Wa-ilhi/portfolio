@@ -1,10 +1,4 @@
-/**
-* Template Name: Knight
-* Template URL: https://bootstrapmade.com/knight-free-bootstrap-theme/
-* Updated: Mar 17 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
+
 
 /*--------------------------------------------------------------
 # General
@@ -651,6 +645,7 @@ section {
  
 }
 
+
 .about .content h2 {
   font-weight: 600;
   font-size: 26px;
@@ -681,6 +676,7 @@ section {
   border-bottom: 2px solid #18d26e;
   padding-bottom: 6px;
 }
+
 .skills .progress {
   height: 60px;
   display: block;
@@ -1849,3 +1845,7 @@ section {
   font-size: 13px;
   padding-top: 5px;
 }
+
+
+
+

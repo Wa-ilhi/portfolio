@@ -22,7 +22,28 @@
   }
 
  // script.js
+// window.addEventListener("load", () => {
+//   const preloader = document.getElementById("preloader");
+  
+//   // Keep the preloader visible for 5 seconds
+//   setTimeout(() => {
+//     preloader.classList.add("hidden"); // Trigger fade-out effect
+//     setTimeout(() => preloader.style.display = "none", 500); // Fully remove after fade-out
+//     document.querySelector(".content").style.display = "block"; // Show the content
+//   }, 3000); // 5000ms = 5 seconds
+// });
 
+// AOS.init({// Ensure the .content class is visible
+document.querySelectorAll('.about .content').forEach(content => {
+  content.style.display = 'block';
+  content.style.color = '#fff'; // Ensure text color is visible
+  content.style.backgroundColor = '#000'; // Ensure background color is set
+  content.style.zIndex = '1'; // Ensure it is above other elements
+  content.style.position = 'relative'; // Ensure it is positioned correctly
+});
+//   duration: 1000, // Animation duration in ms
+//   once: true,     // Run animation only once
+// });
 
   /**
    * Easy event listener function
